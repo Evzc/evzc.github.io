@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Pet Potential Calculator</h1>
+    <form id="calculatorForm">
+        <label for="level">Pet Level:</label>
+        <input type="number" id="level" name="level" required><br><br>
+        
+        <label for="coinmultiplier">Current Coin Multiplier:</label>
+        <input type="number" id="coinmultiplier" name="coinmultiplier" required><br><br>
+        
+        <label for="gemmultiplier">Current Gem Multiplier:</label>
+        <input type="number" id="gemmultiplier" name="gemmultiplier" required><br><br>
+        
+        <label for="rune">Rune (optional):</label>
+        <select id="rune" name="rune">
+            <option value="">None</option>
+            <option value="coin:1.1">Coin Rune I</option>
+            <option value="coin:1.2">Coin Rune II</option>
+            <option value="coin:1.3">Coin Rune III</option>
+            <option value="coin:1.5">Coin Rune IV</option>
+            <option value="coin:1.75">Coin Rune V</option>
+            <option value="gem:1.1">Gem Rune I</option>
+            <option value="gem:1.2">Gem Rune II</option>
+            <option value="gem:1.3">Gem Rune III</option>
+            <option value="gem:1.5">Gem Rune IV</option>
+            <option value="gem:1.75">Gem Rune V</option>
+        </select><br><br>
+        
+        <input type="submit" value="Calculate Potential">
+    </form>
+
+    <div id="result" style="display:none;">
+        <h2>Results:</h2>
+        <p>Coin Potential: <span id="coinPotential"></span></p>
+        <p>Gem Potential: <span id="gemPotential"></span></p>
+        <p>Rune Selected: <span id="runeSelected"></span></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
