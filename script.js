@@ -28,7 +28,27 @@ function formatNumber(number) {
     }
 }
 
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Dark mode initialization
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    
+    if (isDarkMode) {
+        document.body.classList.add('dark-mode');
+    }
+    
+    darkModeToggle.addEventListener('click', toggleDarkMode);
+
+    // Save dark mode state when it changes
+    document.body.addEventListener('classChange', function() {
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+
     document.getElementById('calculatorForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
